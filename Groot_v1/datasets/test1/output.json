@@ -1,0 +1,206 @@
+[
+{
+    "Canonical Name and their Aliases": [
+        {
+            "Aliases": [
+                "ds3.richland.cc.il.us.",
+                "ds3.trial.cc.il.us.",
+                "gw1.trial.cc.il.us."
+            ],
+            "Canonical Name": "gw1.richland.cc.il.us."
+        }
+    ],
+    "Property": "All Aliases"
+},
+{
+    "Domain Name": "child.richland.cc.il.us.",
+    "Inconsistent Pairs": [
+        {
+            "Common Glue Records": [
+                "ns1.child.richland.cc.il.us.   A   4.4.4.4"
+            ],
+            "Common NS Records": [
+                "child.richland.cc.il.us.   NS   ns1.child.richland.cc.il.us."
+            ],
+            "Exclusive parent Glue Records": [
+                "ns2.child.richland.cc.il.us.   A   5.5.5.5"
+            ],
+            "Exclusive parent NS Records": [
+                "child.richland.cc.il.us.   NS   ns2.child.richland.cc.il.us."
+            ],
+            "child NS": "ns1.child.richland.cc.il.us.",
+            "parent NS": "ns1.richland.cc.il.us."
+        },
+        {
+            "Common Glue Records": [
+                "ns1.child.richland.cc.il.us.   A   4.4.4.4"
+            ],
+            "Common NS Records": [
+                "child.richland.cc.il.us.   NS   ns1.child.richland.cc.il.us."
+            ],
+            "Exclusive child-b Glue Records": [
+                "ns2.child.richland.cc.il.us.   A   5.5.5.5"
+            ],
+            "Exclusive child-b NS Records": [
+                "child.richland.cc.il.us.   NS   ns2.child.richland.cc.il.us."
+            ],
+            "child-a NS": "ns1.child.richland.cc.il.us.",
+            "child-b NS": "ns2.child.richland.cc.il.us."
+        }
+    ],
+    "Property": "Structural Delegation Consistency"
+},
+{
+    "Domain Name": "richland.cc.il.us.",
+    "Inconsistent Pairs": [
+        {
+            "Common Glue Records": [
+                "ns1.richland.cc.il.us.   A   64.107.104.28"
+            ],
+            "Common NS Records": [
+                "richland.cc.il.us.   NS   ns1.illinois.net.",
+                "richland.cc.il.us.   NS   ns1.richland.cc.il.us.",
+                "richland.cc.il.us.   NS   ns1.richland.edu.",
+                "richland.cc.il.us.   NS   ns2.illinois.net.",
+                "richland.cc.il.us.   NS   ns2.richland.edu."
+            ],
+            "Exclusive child Glue Records": [
+                "ns1.richland.cc.il.us.   A   64.107.104.29",
+                "ns2.richland.cc.il.us.   A   64.107.104.12"
+            ],
+            "Exclusive child NS Records": [
+                "richland.cc.il.us.   NS   ns2.richland.cc.il.us."
+            ],
+            "child NS": "ns1.richland.cc.il.us.",
+            "parent NS": "us.illinois.net."
+        }
+    ],
+    "Property": "Structural Delegation Consistency"
+},
+{
+    "Expected": "64.107.104.4",
+    "Mismatches": [
+        {
+            "Found": "64.107.104.3",
+            "Nameserver": "ns1.richland.cc.il.us.",
+            "Query": "gw1.richland.cc.il.us."
+        }
+    ],
+    "Property": "Response Value"
+},
+{
+    "Property": "Delegation Consistency",
+    "Query": "child.richland.cc.il.us.",
+    "Violation": {
+        "InconsistencyType": "Glue",
+        "Nameserver1": "ns1.richland.cc.il.us.",
+        "Nameserver2": "ns1.child.richland.cc.il.us."
+    }
+},
+{
+    "Property": "Delegation Consistency",
+    "Query": "child.richland.cc.il.us.",
+    "Violation": {
+        "InconsistencyType": "NS",
+        "Nameserver1": "ns1.richland.cc.il.us.",
+        "Nameserver2": "ns1.child.richland.cc.il.us."
+    }
+},
+{
+    "Property": "Name Server Contact",
+    "Query": "clc.cc.il.us.",
+    "Violation": {
+        "AllowedDomains": "[edu., net., cc.il.us.]",
+        "ExternalNameserver": "ns1.illinois.nt."
+    }
+},
+{
+    "Property": "Name Server Contact",
+    "Query": "dns-t.clc.cc.il.us.",
+    "Violation": {
+        "AllowedDomains": "[edu., net., cc.il.us.]",
+        "ExternalNameserver": "ns1.illinois.nt."
+    }
+},
+{
+    "Property": "Name Server Contact",
+    "Query": "~{ }.clc.cc.il.us.",
+    "Violation": {
+        "AllowedDomains": "[edu., net., cc.il.us.]",
+        "ExternalNameserver": "ns1.illinois.nt."
+    }
+},
+{
+    "Property": "Name Server Contact",
+    "Query": "~{ }.dns-t.clc.cc.il.us.",
+    "Violation": {
+        "AllowedDomains": "[edu., net., cc.il.us.]",
+        "ExternalNameserver": "ns1.illinois.nt."
+    }
+},
+{
+    "Property": "Query Rewrite",
+    "Query": "rwhois.cc.il.us.",
+    "Violation": {
+        "ExpectedUnder": "[illinois.net., cc.il.us.]",
+        "Nameserver": "us.illinois.net.",
+        "RewriteTarget": "us.illlinois.net."
+    }
+},
+{
+    "Property": "Response Consistency",
+    "Query": "chicago.child.richland.cc.il.us."
+},
+{
+    "Property": "Response Consistency",
+    "Query": "child.richland.cc.il.us."
+},
+{
+    "Property": "Rewrite Blackholing",
+    "Query": "darwin.child.richland.cc.il.us.",
+    "Violation": {
+        "BlackholeNameserver": "ns2.child.richland.cc.il.us.",
+        "RewriteTarget": "fusion.child.richland.cc.il.us."
+    }
+},
+{
+    "Property": "Rewrite Blackholing",
+    "Query": "uranus.child.richland.cc.il.us.",
+    "Violation": {
+        "BlackholeNameserver": "ns2.child.richland.cc.il.us.",
+        "RewriteTarget": "fusion.child.richland.cc.il.us."
+    }
+},
+{
+    "Property": "Rewrites",
+    "Query": "darwin.child.richland.cc.il.us.",
+    "Violation": {
+        "ActualRewrites": 2,
+        "MaxAllowedRewrites": 1
+    }
+},
+{
+    "Property": "Rewrites",
+    "Query": "darwin.child.trial.cc.il.us.",
+    "Violation": {
+        "ActualRewrites": 3,
+        "MaxAllowedRewrites": 1
+    }
+},
+{
+    "Property": "Rewrites",
+    "Query": "ds3.trial.cc.il.us.",
+    "Violation": {
+        "ActualRewrites": 2,
+        "MaxAllowedRewrites": 1
+    }
+},
+{
+    "Property": "Rewrites",
+    "Query": "uranus.child.trial.cc.il.us.",
+    "Violation": {
+        "ActualRewrites": 2,
+        "MaxAllowedRewrites": 1
+    }
+}
+]
